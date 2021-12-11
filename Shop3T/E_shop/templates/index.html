@@ -1,0 +1,135 @@
+{% extends 'master.html' %}
+{% block body %}
+<div id="carousel" class="carousel slide" data-ride="carousel" style="margin-bottom: 20px;">
+	<ol class="carousel-indicators">
+			<li data-target="#carousel" data-slide-to="0"></li>
+			<li data-target="#carousel" data-slide-to="1"></li>
+			<li data-target="#carousel" data-slide-to="2"></li>
+	</ol>
+	<div class="carousel-inner">
+			<div class="item active">
+					<img style="width: 92%;"src="../static/images/newfeeds/asus oled 5 ly do theumb.jpg" alt="Slide 1">
+			</div>
+			<div class="item">
+					<img style="width: 92%;"src="../static/images/newfeeds/thumb asus vivo book pro oled.jpg" alt="Slide 2">
+			</div>
+			<div class="item">
+					<img style="width: 92%;"src="../static/images/newfeeds/thumb black friday finnal.jpg" alt="Slide 3">
+			</div>
+	</div>
+	<a href="#carousel" class="left carousel-control" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+	</a>
+	<a href="#carousel" class="right carousel-control" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right"></span>
+	</a>
+</div>
+<section>
+		<div class="container">
+			<div class="row">
+				<div class="features_items"><!--features_items-->
+					<h2 class="title text-center" style="background-color: bisque; padding: 10px 0px;">Mobile</h2>
+					{% for prod in product %}
+					{% if prod.id == 10 or prod.id == 11 or prod.id == 12 %}
+					<div class="col-sm-4">
+						<div class="product-image-wrapper">
+							<div class="single-products">
+									<div class="productinfo text-center">
+										<div style="height: 200px;">
+											<img src="{{prod.image}}" alt=""  height="150px" style="object-fit: contain;"/>
+										</div>
+										<h2>${{prod.price}}</h2>
+										<p>{{prod.name}}</p>
+										<a href="{% url 'cart_add' prod.id %}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+									</div>
+									<div class="product-overlay">
+										<div class="overlay-content">
+											<h2>{{prod.price}}</h2>
+											<p>{{prod.name}}</p>
+											<a href="{% url 'cart_add' prod.id %}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+										</div>
+									</div>
+							</div>
+							<div class="choose">
+								<ul class="nav nav-pills nav-justified">
+									<li><a href="/product/{{prod.id}}"><i class="fa fa-plus-square"></i>View Product</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					{% endif %}
+					{% endfor %}
+				</div><!--features_items-->
+				<div class="features_items"><!--features_items-->
+					<h2 class="title text-center" style="background-color: bisque; padding: 10px 0px;">Laptop</h2>
+					{% for prod in product %}
+					{% if prod.id == 26 or prod.id == 21 or prod.id == 22 %}
+					<div class="col-sm-4">
+						<div class="product-image-wrapper">
+							<div class="single-products">
+									<div class="productinfo text-center">
+										<div style="height: 200px;">
+											<img src="{{prod.image}}" alt=""  height="150px" style="object-fit: contain;"/>
+										</div>
+										<h2>${{prod.price}}</h2>
+										<p>{{prod.name}}</p>
+										<a href="{% url 'cart_add' prod.id %}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+									</div>
+									<div class="product-overlay">
+										<div class="overlay-content">
+											<h2>{{prod.price}}</h2>
+											<p>{{prod.name}}</p>
+											<a href="{% url 'cart_add' prod.id %}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+										</div>
+									</div>
+							</div>
+							<div class="choose">
+								<ul class="nav nav-pills nav-justified">
+									<li><a href="/product/{{prod.id}}"><i class="fa fa-plus-square"></i>View Product</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					{% endif %}
+					{% endfor %}
+				</div><!--features_items-->
+				<div class="features_items"><!--features_items-->
+					<h2 class="title text-center" style="background-color: bisque; padding: 10px 0px;">Other</h2>
+					{% for prod in product %}
+					{% if prod.id == 32 or prod.id == 29 or prod.id == 38 %}
+					<div class="col-sm-4">
+						<div class="product-image-wrapper">
+							<div class="single-products">
+									<div class="productinfo text-center">
+										<div style="height: 200px;">
+											<img src="{{prod.image}}" alt=""  height="150px" style="object-fit: contain;"/>
+										</div>
+										<h2>${{prod.price}}</h2>
+										<p>{{prod.name}}</p>
+										<a href="{% url 'cart_add' prod.id %}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+									</div>
+									<div class="product-overlay">
+										<div class="overlay-content">
+											<h2>{{prod.price}}</h2>
+											<p>{{prod.name}}</p>
+											<a href="{% url 'cart_add' prod.id %}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+										</div>
+									</div>
+							</div>
+							<div class="choose">
+								<ul class="nav nav-pills nav-justified">
+									<li><a href="/product/{{prod.id}}"><i class="fa fa-plus-square"></i>View Product</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					{% endif %}
+					{% endfor %}
+				</div><!--features_items-->
+
+				<!-- </div> -->
+			</div>
+		</div>
+	</section>
+
+{% endblock %}
